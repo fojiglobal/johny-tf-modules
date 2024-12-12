@@ -267,6 +267,16 @@ resource "aws_launch_template" "lt" {
   instance_type                        = var.instance_type
   key_name                             = var.key_pairs_name
   vpc_security_group_ids               = [aws_security_group.private_sg.id]
+
+  # Use the Instance Profile (IAM Role)
+
+  # iam_instance_profile {
+  #   name = var.iam_instance_profile
+  # }
+  
+  # iam_instance_profile {
+  #   name = "base-ec2-role"
+  # }
   
   tag_specifications {
     resource_type = var.resource_type
@@ -390,7 +400,7 @@ resource "aws_lb_listener_rule" "rule" {
 
   condition {
     host_header {
-      values = ["www.${var.env}.johnyfoster.com", "${var.env}.johnyfoster.com"]
+      values = ["www.${var.env}.johnylabs.com", "${var.env}.johnylabs.com"]
     }
   }
 }

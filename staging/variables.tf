@@ -152,6 +152,10 @@ variable "key_pairs_name" {
   type = string
 }
 
+# variable "iam_instance_profile" {
+#   type = string
+# }
+
 variable "resource_type" {
   type = string
 }
