@@ -29,3 +29,11 @@ output "private_sg_id" {
 output "bastion_sg_id" {
   value = aws_security_group.bastion_sg.id
 }
+
+##########################################################################
+############# Outputs for Application Load Balancer
+##########################################################################
+
+output "alb_arn" {
+  value = aws_lb.alb.arn
+}
